@@ -1,0 +1,37 @@
+3. Implement a custom NullPointerException class named
+CustomNullPointerException that mimics the behavior of the standard
+NullPointerException, but instead of using default error messages or null references, 
+it takes a String message as its constructor argument. Your task is to create this custom 
+exception class and demonstrate its usage in a Java program.
+
+//code
+package Assignment_5;
+
+class CustomNullPointerException extends Exception{
+    CustomNullPointerException(String mssg) {
+        super(mssg);
+    }
+}
+public class Q3{
+    public static void main(String[] args) {
+        String inp=null;
+        try{
+            if(inp==null){
+                throw new CustomNullPointerException("Input value cannot be null");
+            }
+            else{
+                System.out.println("Input value is "+inp);
+            }
+        }
+        catch(CustomNullPointerException e){
+            System.out.println(e);
+        }
+    }
+}
+
+
+
+/**
+ * OUTPUT
+ * CustomNullPointerException: Input value cannot be null
+ */

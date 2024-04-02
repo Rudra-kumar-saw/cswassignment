@@ -1,0 +1,43 @@
+5. Develop a program that performs complex mathematical (may have log, trigonometric
+and algebraic functions) computations. Handle unchecked NullPointerException
+gracefully using try-catch block and provide a meaningful error message.
+
+//code
+package Assignment_5;
+
+import java.sql.Wrapper;
+
+public class Q5 {
+    static class Wrapper {
+        public static Double getValue() {
+            return null;
+        }
+    }
+    public static double complexMath(double x) {
+            double rad = Math.toRadians(x);
+            double sin_val = Math.sin(rad);
+            double cos_val = Math.cos(rad);
+            double tan_val = Math.tan(rad);
+            double result = sin_val + cos_val + tan_val;
+            return result;
+    }
+    public static void main(String[] args) {
+        try {
+            Double value = Wrapper.getValue();            // This will return null
+            double result = complexMath(value);          // Passing null intentionally
+            System.out.println("Result : " + result);
+        }
+        catch (NullPointerException e) {
+            System.err.println("NullPointerException occurred : "+e);
+        }
+        catch (Exception e) {
+            System.err.println("Error occurred : "+e);
+        }
+    }
+}
+
+
+/**
+ * OUTPUT
+ *NullPointerException occurred : java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because "value" is null
+ */
