@@ -6,7 +6,7 @@ appropriate error message. Ensure that the program handles any potential excepti
 gracefully
 
 
-//code
+//co
 public class Q02 {
     public static void main(String[] args) {
         String input = "aeiouh6";
